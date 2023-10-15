@@ -16,10 +16,9 @@ export const Home = () => {
         />
         <div className="flex justify-center">
           <p className="text-sm">
-            Casa editrice? Se sei interessato all&apos;opera e vuoi interrompere
-            questo countdown clicca{' '}
+            Are you afraid and want to take action? Then wait no more and click{' '}
             <Link to={'/torename'} className="text-primary">
-              qui
+              here
             </Link>
             .
           </p>

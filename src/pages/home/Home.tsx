@@ -4,7 +4,7 @@ import { CountdownTimer } from './components/CountdownTimer'
 
 export const Home = () => {
   return (
-    <PageContainer title="COUNTERS">
+    <PageContainer title="SCARY COUNTERS">
       <div className="flex flex-col gap-10">
         <CountdownTimer
           targetDate="2023-11-03T00:00:00"

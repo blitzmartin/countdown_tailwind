@@ -1,6 +1,5 @@
-import { PhList, PhMoon, PhSun } from '@/icons'
+import { PhList } from '@/icons'
 import { NavbarLink, navbarLinks } from '@/lib/constants'
-import { useColorPreference } from '@/providers/ColorPreferenceProvider'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -17,11 +16,6 @@ import {
 import { Link } from 'react-router-dom'
 
 export const Navbar = () => {
-  const { colorScheme, setColorScheme } = useColorPreference()
-  const toggleTheme = () => {
-    const newTheme = colorScheme === 'light' ? 'dark' : 'light'
-    setColorScheme(newTheme)
-  }
   return (
     <div className="flex justify-between pr-4">
       <div>
@@ -57,13 +51,6 @@ export const Navbar = () => {
           </DropdownMenu>
         </div>
       </div>
-      <button onClick={toggleTheme}>
-        {colorScheme === 'light' ? (
-          <PhMoon width="20px" height="20px" />
-        ) : (
-          <PhSun width="20px" height="20px" />
-        )}
-      </button>
     </div>
   )
 }

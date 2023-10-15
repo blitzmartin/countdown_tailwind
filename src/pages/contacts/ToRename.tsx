@@ -1,8 +1,8 @@
 import { PageContainer } from '@/shared/PageContainer'
 
-export const Contacts = () => {
+export const ToRename = () => {
   return (
-    <PageContainer title="Contacts">
+    <PageContainer title="ToRename">
       <p>
         Lorem ipsum dolor sit amet. Vel amet voluptatibus ut deleniti suscipit
         At magni laborum. Est exercitationem quis ut nisi dignissimos ut

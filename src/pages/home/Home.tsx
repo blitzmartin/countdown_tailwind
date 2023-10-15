@@ -4,22 +4,26 @@ import { CountdownTimer } from './components/CountdownTimer'
 
 export const Home = () => {
   return (
-    <PageContainer title="">
-      <div className="flex justify-center">
-        <h2 className="text-xl font-semibold">
-          Questo libro sarà autopubblicato in:
-        </h2>
-      </div>
-      <CountdownTimer />
-      <div className="flex justify-center">
-        <p className="text-sm">
-          Casa editrice? Se sei interessato all&apos;opera e vuoi interrompere
-          questo countdown clicca{' '}
-          <Link to={'/torename'} className="text-primary">
-            qui
-          </Link>
-          .
-        </p>
+    <PageContainer title="COUNTERS">
+      <div className="flex flex-col gap-10">
+        <CountdownTimer
+          targetDate="2023-11-03T00:00:00"
+          description="Tipping point"
+        />
+        <CountdownTimer
+          targetDate="2024-01-02T00:00:00"
+          description="My birthday so that you know"
+        />
+        <div className="flex justify-center">
+          <p className="text-sm">
+            Casa editrice? Se sei interessato all&apos;opera e vuoi interrompere
+            questo countdown clicca{' '}
+            <Link to={'/torename'} className="text-primary">
+              qui
+            </Link>
+            .
+          </p>
+        </div>
       </div>
     </PageContainer>
   )

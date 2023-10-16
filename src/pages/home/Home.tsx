@@ -21,7 +21,7 @@ export const Home = () => {
         <span>
           <Select onValueChange={(value) => setEvent(value)}>
             <SelectTrigger className="w-[180px]">
-              <SelectValue placeholder="select event" />
+              <SelectValue placeholder="(select event)" />
             </SelectTrigger>
             <SelectContent>
               <SelectGroup>

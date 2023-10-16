@@ -46,13 +46,13 @@ console.log(targetDate)
             <span className="countdown font-mono text-8xl">
               <span style={daysStyle}></span>
             </span>
-            giorni
+            days
           </div>
           <div className="flex flex-col">
             <span className="countdown font-mono text-8xl">
               <span style={hoursStyle}></span>
             </span>
-            ore
+            hours
           </div>
           <div className="flex flex-col">
             <span className="countdown font-mono text-8xl">

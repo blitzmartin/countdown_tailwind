@@ -10,9 +10,9 @@ export const Home = () => {
   const [targetEvent, setTargetEvent] = useState<string>('')
 
   return (
-    <PageContainer title="HOW MANY DAYS">
-      <div className="flex flex-col gap-10">
-      <div className="flex justify-start gap-2 items-center">
+    <PageContainer title="HOW MANY DAYS" className='p-12'>
+      <div className="flex flex-col gap-5 pt-10">
+      <div className="flex justify-start gap-1 items-center">
         <h2 className="text-xl font-semibold text-accent">Days until </h2>
         <span>
           <Select onValueChange={(value) => setTargetEvent(value)}>

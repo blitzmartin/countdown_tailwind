@@ -54,7 +54,7 @@ export const CountdownTimer = ({
         <div className="grid auto-cols-max grid-flow-col gap-5 text-center text-primary">
           <div className="flex flex-col">
             <span className="countdown font-mono text-8xl">
-              {centinaiaStyle.toString() !== "00" && ( <span style={centinaiaStyle}></span>)}
+              {days >99 && ( <span style={centinaiaStyle}></span>)}
               <span style={daysStyle}></span>
             </span>
             days

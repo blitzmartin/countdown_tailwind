@@ -16,7 +16,7 @@ export const Home = () => {
         <h2 className="text-xl font-semibold text-accent">Days until </h2>
         <span>
           <Select onValueChange={(value) => setTargetEvent(value)}>
-            <SelectTrigger className="">
+            <SelectTrigger>
               <SelectValue placeholder="(select event)" />
             </SelectTrigger>
             <SelectContent>

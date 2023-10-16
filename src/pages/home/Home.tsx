@@ -7,11 +7,7 @@ import { EventType, events } from '@/lib/constants'
 
 export const Home = () => {
 
-  const [event, setEvent] = useState<string>('')
-  const currentDate = new Date();
-  const currentYear = currentDate.getFullYear() + 1; // need to check if date has passed this year or not
-  const formattedYear = currentYear.toString();
-
+  const [targetEvent, setTargetEvent] = useState<string>('')
 
   return (
     <PageContainer title="HOW MANY DAYS">
@@ -19,7 +15,7 @@ export const Home = () => {
       <div className="flex justify-start gap-2 items-center">
         <h2 className="text-xl font-semibold text-accent">Days until </h2>
         <span>
-          <Select onValueChange={(value) => setEvent(value)}>
+          <Select onValueChange={(value) => setTargetEvent(value)}>
             <SelectTrigger className="w-[180px]">
               <SelectValue placeholder="(select event)" />
             </SelectTrigger>
@@ -32,10 +28,7 @@ export const Home = () => {
         </span>
      
       </div>
-        <CountdownTimer
-          targetDate={`${formattedYear}-${event}T00:00:00`}
-          description="My birthday so that you know"
-        />
+        <CountdownTimer targetDate={targetEvent} />
       </div>
     </PageContainer>
   )

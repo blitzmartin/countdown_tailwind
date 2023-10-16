@@ -6,7 +6,14 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const calculateTimeLeft = (date: string) => {
-  const targetDate = new Date(date)
+  const currentDate = new Date();
+  const currentYear = currentDate.getFullYear(); 
+  const targetDate = new Date(`${currentYear}-${date}`)
+
+  if (targetDate <= currentDate) {
+    targetDate.setFullYear(currentYear + 1);
+  }
+
   const currentTime = new Date().getTime()
   const timeDifference = targetDate.getTime() - currentTime
 

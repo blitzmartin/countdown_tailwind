@@ -2,13 +2,10 @@ import { calculateTimeLeft } from '@/lib/utils'
 import { useEffect, useState } from 'react'
 
 export const CountdownTimer = ({
-  targetDate,
-  description
+  targetDate
 }: {
   targetDate: string
-  description: string
 }) => {
-console.log(targetDate)
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(targetDate))
 

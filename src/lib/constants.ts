@@ -31,7 +31,17 @@ export const events = [
   },
   {
     id: "3",
-    value: "02-01",
-    label: "my bday"
+    value: "02-14",
+    label: "st. valentine's day"
+  },
+  {
+    id: "4",
+    value: "06-05",
+    label: "world environment's day"
+  },
+  {
+    id: "5",
+    value: "03-08",
+    label: "international women's day"
   },
 ]

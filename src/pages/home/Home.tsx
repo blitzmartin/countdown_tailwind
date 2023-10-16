@@ -1,7 +1,7 @@
 import { PageContainer } from '@/shared/PageContainer'
 import { CountdownTimer } from './components/CountdownTimer'
 import { useEffect, useState } from 'react'
-import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from '@/shared'
+import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/shared'
 import { EventType, events } from '@/lib/constants'
 
 
@@ -16,7 +16,7 @@ export const Home = () => {
         <h2 className="text-xl font-semibold text-accent">Days until </h2>
         <span>
           <Select onValueChange={(value) => setTargetEvent(value)}>
-            <SelectTrigger className="w-[180px]">
+            <SelectTrigger className="">
               <SelectValue placeholder="(select event)" />
             </SelectTrigger>
             <SelectContent>

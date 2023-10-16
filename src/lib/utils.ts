@@ -8,7 +8,7 @@ export function cn(...inputs: ClassValue[]) {
 export const calculateTimeLeft = (date: string) => {
   const currentDate = new Date();
   const currentYear = currentDate.getFullYear(); 
-  const targetDate = new Date(`${currentYear}-${date}`)
+  let targetDate = new Date(`${currentYear}-${date}`)
 
   if (targetDate <= currentDate) {
     targetDate.setFullYear(currentYear + 1);

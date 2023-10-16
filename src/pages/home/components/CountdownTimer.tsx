@@ -15,7 +15,7 @@ export const CountdownTimer = ({
     }, 1000)
 
     return () => clearInterval(interval)
-  }, [])
+  }, [targetDate])
 
   const { days, hours, minutes, seconds } = timeLeft
 

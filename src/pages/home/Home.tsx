@@ -1,28 +1,19 @@
 import { PageContainer } from '@/shared/PageContainer'
-import { Link } from 'react-router-dom'
 import { CountdownTimer } from './components/CountdownTimer'
+import { useState } from 'react'
 
 export const Home = () => {
+  const [event, setEvent] = useState('')
   return (
-    <PageContainer title="SCARY COUNTERS">
+    <PageContainer title="HOW MANY DAYS">
       <div className="flex flex-col gap-10">
-        <CountdownTimer
-          targetDate="2023-11-03T00:00:00"
-          description="Tipping point"
-        />
+      <div className="flex justify-start">
+        <h2 className="text-xl font-semibold text-accent">Days until {event}:</h2>
+      </div>
         <CountdownTimer
           targetDate="2024-01-02T00:00:00"
           description="My birthday so that you know"
         />
-        <div className="flex justify-center">
-          <p className="text-sm">
-            Are you afraid and want to take action? Then wait no more and click{' '}
-            <Link to={'/torename'} className="text-primary">
-              here
-            </Link>
-            .
-          </p>
-        </div>
       </div>
     </PageContainer>
   )

@@ -40,9 +40,6 @@ export const CountdownTimer = ({
 
   return (
     <div className="flex flex-col gap-2">
-      <div className="flex justify-start">
-        <h2 className="text-xl font-semibold text-accent">{description}:</h2>
-      </div>
       <div className="flex flex-col items-center gap-4 ">
         <div className="grid auto-cols-max grid-flow-col gap-5 text-center text-primary">
           <div className="flex flex-col">

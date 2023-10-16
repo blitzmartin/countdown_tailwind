@@ -1,16 +1,17 @@
 import { PageContainer } from '@/shared/PageContainer'
 import { CountdownTimer } from './components/CountdownTimer'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from '@/shared'
 import { EventType, events } from '@/lib/constants'
 
 
 export const Home = () => {
 
-  const [event, setEvent] = useState<EventType>(events[0])
+  const [event, setEvent] = useState<string>('')
   const currentDate = new Date();
-  const currentYear = currentDate.getFullYear();
+  const currentYear = currentDate.getFullYear() + 1;
   const formattedYear = currentYear.toString();
+
 
   return (
     <PageContainer title="HOW MANY DAYS">
@@ -18,17 +19,13 @@ export const Home = () => {
       <div className="flex justify-start gap-2 items-center">
         <h2 className="text-xl font-semibold text-accent">Days until </h2>
         <span>
-          <Select>
+          <Select onValueChange={(value) => setEvent(value)}>
             <SelectTrigger className="w-[180px]">
               <SelectValue placeholder="select event" />
             </SelectTrigger>
             <SelectContent>
               <SelectGroup>
-                <SelectLabel>Events</SelectLabel>
-                {
-
-                }
-                <SelectItem value="apple">Apple</SelectItem>
+                {events.map((event) => (<SelectItem value={event.value}>{event.label}</SelectItem>))}             
               </SelectGroup>
             </SelectContent>
           </Select>
@@ -36,7 +33,7 @@ export const Home = () => {
      
       </div>
         <CountdownTimer
-          targetDate={`${formattedYear}-${event.value}T00:00:00`}
+          targetDate={`${formattedYear}-${event}T00:00:00`}
           description="My birthday so that you know"
         />
       </div>

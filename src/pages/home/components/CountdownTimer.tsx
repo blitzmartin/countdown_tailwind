@@ -8,7 +8,7 @@ export const CountdownTimer = ({
   targetDate: string
   description: string
 }) => {
-  // Target date: October 1st, 2023, at midnight (00:00:00)
+console.log(targetDate)
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(targetDate))
 

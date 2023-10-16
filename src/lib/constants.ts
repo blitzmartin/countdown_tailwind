@@ -25,7 +25,12 @@ export const events = [
     label: "x-mas"
   },
   {
-    id: "1",
+    id: "2",
+    value: "01-01",
+    label: "new year"
+  },
+  {
+    id: "3",
     value: "02-01",
     label: "my bday"
   },

@@ -1,8 +1,8 @@
 import { PageContainer } from '@/shared/PageContainer'
 import { CountdownTimer } from './components/CountdownTimer'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/shared'
-import { EventType, events } from '@/lib/constants'
+import { events } from '@/lib/constants'
 
 
 export const Home = () => {
@@ -21,7 +21,7 @@ export const Home = () => {
             </SelectTrigger>
             <SelectContent>
               <SelectGroup>
-                {events.map((event) => (<SelectItem value={event.value}>{event.label}</SelectItem>))}             
+                {events.map((event) => (<SelectItem key={event.value} value={event.value}>{event.label}</SelectItem>))}             
               </SelectGroup>
             </SelectContent>
           </Select>

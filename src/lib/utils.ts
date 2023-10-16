@@ -14,6 +14,7 @@ export const calculateTimeLeft = (date: string) => {
     targetDate.setFullYear(currentYear + 1);
   }
 
+
   const currentTime = new Date().getTime()
   const timeDifference = targetDate.getTime() - currentTime
 

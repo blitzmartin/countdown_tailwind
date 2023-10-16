@@ -44,4 +44,14 @@ export const events = [
     value: "03-08",
     label: "international women's day"
   },
+  {
+    id: "6",
+    value: "05-01",
+    label: "international workers' day"
+  },
+  {
+    id: "7",
+    value: "10-31",
+    label: "halloween"
+  },
 ]

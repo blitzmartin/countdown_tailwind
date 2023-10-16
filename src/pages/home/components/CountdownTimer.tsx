@@ -18,9 +18,22 @@ export const CountdownTimer = ({
   }, [targetDate])
 
   const { days, hours, minutes, seconds } = timeLeft
+  let customDays;
+  let centinaia;
+  if(days > 99) {
+    centinaia = Math.floor(days / 100);
+    const decineUnità = days % 100;
+    customDays = decineUnità
+  } else {
+    customDays = days
+  }
+
+  const centinaiaStyle = {
+    '--value': centinaia
+  } as React.CSSProperties
 
   const daysStyle = {
-    '--value': days
+    '--value': customDays
   } as React.CSSProperties
 
   const hoursStyle = {
@@ -41,6 +54,7 @@ export const CountdownTimer = ({
         <div className="grid auto-cols-max grid-flow-col gap-5 text-center text-primary">
           <div className="flex flex-col">
             <span className="countdown font-mono text-8xl">
+              {centinaiaStyle.toString() !== "00" && ( <span style={centinaiaStyle}></span>)}
               <span style={daysStyle}></span>
             </span>
             days

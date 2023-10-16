@@ -9,7 +9,7 @@ export const Home = () => {
 
   const [event, setEvent] = useState<string>('')
   const currentDate = new Date();
-  const currentYear = currentDate.getFullYear() + 1;
+  const currentYear = currentDate.getFullYear() + 1; // need to check if date has passed this year or not
   const formattedYear = currentYear.toString();
 
 

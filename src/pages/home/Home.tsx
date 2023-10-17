@@ -7,7 +7,7 @@ import { events } from '@/lib/constants'
 
 export const Home = () => {
 
-  const [targetEvent, setTargetEvent] = useState<string>('')
+  const [targetEvent, setTargetEvent] = useState<string |null>(null)
 
   return (
     <PageContainer title="HOW MANY DAYS" className='p-12'>

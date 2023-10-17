@@ -5,7 +5,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export const calculateTimeLeft = (date: string) => {
+export const calculateTimeLeft = (date: string | null) => {
   const currentDate = new Date();
   const currentYear = currentDate.getFullYear(); 
   let targetDate = new Date(`${currentYear}-${date}`)

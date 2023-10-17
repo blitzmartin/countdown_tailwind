@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 export const CountdownTimer = ({
   targetDate
 }: {
-  targetDate: string
+  targetDate: string | null
 }) => {
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(targetDate))

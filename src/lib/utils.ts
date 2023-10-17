@@ -5,8 +5,16 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export const calculateTimeLeft = (date: string) => {
-  const targetDate = new Date(date)
+export const calculateTimeLeft = (date: string | null) => {
+  const currentDate = new Date();
+  const currentYear = currentDate.getFullYear(); 
+  let targetDate = new Date(`${currentYear}-${date}`)
+
+  if (targetDate <= currentDate) {
+    targetDate.setFullYear(currentYear + 1);
+  }
+
+
   const currentTime = new Date().getTime()
   const timeDifference = targetDate.getTime() - currentTime
 

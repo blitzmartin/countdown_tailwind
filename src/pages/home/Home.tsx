@@ -1,28 +1,34 @@
 import { PageContainer } from '@/shared/PageContainer'
-import { Link } from 'react-router-dom'
 import { CountdownTimer } from './components/CountdownTimer'
+import { useState } from 'react'
+import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/shared'
+import { events } from '@/lib/constants'
+
 
 export const Home = () => {
+
+  const [targetEvent, setTargetEvent] = useState<string |null>(null)
+
   return (
-    <PageContainer title="SCARY COUNTERS">
-      <div className="flex flex-col gap-10">
-        <CountdownTimer
-          targetDate="2023-11-03T00:00:00"
-          description="Tipping point"
-        />
-        <CountdownTimer
-          targetDate="2024-01-02T00:00:00"
-          description="My birthday so that you know"
-        />
-        <div className="flex justify-center">
-          <p className="text-sm">
-            Are you afraid and want to take action? Then wait no more and click{' '}
-            <Link to={'/torename'} className="text-primary">
-              here
-            </Link>
-            .
-          </p>
-        </div>
+    <PageContainer title="HOW MANY DAYS" className='p-12'>
+      <div className="flex flex-col gap-5 pt-10">
+      <div className="flex justify-start gap-1 items-center">
+        <h2 className="text-xl font-semibold text-accent">Days until </h2>
+        <span>
+          <Select onValueChange={(value) => setTargetEvent(value)}>
+            <SelectTrigger>
+              <SelectValue placeholder="(select event)" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectGroup>
+                {events.map((event) => (<SelectItem key={event.value} value={event.value}>{event.label}</SelectItem>))}             
+              </SelectGroup>
+            </SelectContent>
+          </Select>
+        </span>
+     
+      </div>
+        <CountdownTimer targetDate={targetEvent} />
       </div>
     </PageContainer>
   )
